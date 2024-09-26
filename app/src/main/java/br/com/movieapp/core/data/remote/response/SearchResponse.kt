@@ -14,5 +14,8 @@ data class SearchResponse(
     val totalPages: Int,
 
     @SerializedName("total_results")
-    val totalResults: Int
+    val totalResults: Int,
+
+    @SerializedName("results")
+    val results: List<SearchResult>
 )
