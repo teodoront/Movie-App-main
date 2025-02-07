@@ -2,6 +2,7 @@ package br.com.movieapp.movie_popular_feature.data.maper
 
 import br.com.movieapp.core.data.remote.model.MovieResult
 import br.com.movieapp.core.domain.model.Movie
+import br.com.movieapp.core.util.toBackdropUrl
 import br.com.movieapp.core.util.toPostUrl
 
 fun List<MovieResult>.toMovie() = map { movieResult ->
@@ -9,6 +10,7 @@ fun List<MovieResult>.toMovie() = map { movieResult ->
         id = movieResult.id,
         title = movieResult.title,
         voteAverage = movieResult.voteAverage,
-        imageUrl = movieResult?.posterPath?.toPostUrl()?:""
+        //imageUrl = movieResult?.posterPath?.toPostUrl()?:""
+        imageUrl = movieResult?.posterPath?.toBackdropUrl()?:""
     )
 }
